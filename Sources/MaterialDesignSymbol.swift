@@ -49,7 +49,7 @@ import UIKit
 private class FontLoader {
     class func loadFont(name: String) {
         
-        let ttfPath = NSBundle(forClass:self.dynamicType).pathForResource(name, ofType:"ttf")
+        let ttfPath = NSBundle.mainBundle().pathForResource(name, ofType:"ttf")
         
         let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: ttfPath!)!
         let data : NSData = fileHandle.readDataToEndOfFile()
