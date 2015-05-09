@@ -14,16 +14,11 @@ import UIKit
     
     public init(text:NSString, size:CGFloat) {
         self.text = text
-        let ttfName = "googleicon"
         
         self.mutableTextFontAttributes = [NSObject : AnyObject]()
         self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         
-        if (UIFont.fontNamesForFamilyName(ttfName as String).count == 0) {
-            FontLoader.loadFont(ttfName as String)
-        }
-        
-        self.mutableTextFontAttributes[NSFontAttributeName] = UIFont(name:ttfName as String, size: size)!
+        self.mutableTextFontAttributes[NSFontAttributeName] = MaterialDesignFont.fontOfSize(size)
     }
     
     public func addAttribute(attributeName:NSObject, value:AnyObject) {
@@ -63,6 +58,26 @@ private class FontLoader {
             let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
             NSException(name: NSInternalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
         }
+    }
+}
+
+
+private class MaterialDesignFont {
+    
+    class func fontOfSize(fontSize: CGFloat) -> UIFont {
+        
+        struct Static {
+            static var onceToken : dispatch_once_t = 0
+        }
+        
+        let name = "googleicon"
+        if (UIFont.fontNamesForFamilyName(name).count == 0) {
+            dispatch_once(&Static.onceToken) {
+                FontLoader.loadFont(name)
+            }
+        }
+        
+        return UIFont(name: name, size: fontSize)!
     }
 }
 
