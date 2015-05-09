@@ -1,4 +1,7 @@
 #### MaterialDesignIcon
+
+![image](https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/6377/_____.png)
+
 Icon font library for Swift. Currently supports GoogleMaterialDesignIcons
 
 #### Licence
