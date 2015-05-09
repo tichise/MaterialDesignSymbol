@@ -1,8 +1,13 @@
 //
 //  MDIcon.swift
 //
+//  Created by tichise on 2015年5月7日 15/05/07.
+//  Copyright (c) 2015年 tichise. All rights reserved.
+//
 
-struct MDIcon {
+import UIKit
+
+class MDIcon: NSObject {
     
     static let threeDRotation24px = "\u{e600}"
     static let threeDRotation48px = "\u{e601}"
