@@ -1,5 +1,5 @@
 //
-//  MaterialDesignIcon
+//  MaterialDesignSymbol
 //
 //  Created by tichise on 2015年5月7日 15/05/07.
 //  Copyright (c) 2015年 tichise. All rights reserved.
@@ -7,10 +7,11 @@
 
 import UIKit
 
-@objc public class MaterialDesignIcon {
+@objc public class MaterialDesignSymbol {
     
     var text:NSString = ""
     var mutableTextFontAttributes = [NSObject : AnyObject]()
+    let ttfName:NSString = "googleicon"
     
     public init(text:NSString, size:CGFloat) {
         self.text = text
@@ -18,11 +19,11 @@ import UIKit
         self.mutableTextFontAttributes = [NSObject : AnyObject]()
         self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         
-        if (UIFont.fontNamesForFamilyName("googleicon").count == 0) {
-            FontLoader.loadFont("googleicon")
+        if (UIFont.fontNamesForFamilyName(self.ttfName).count == 0) {
+            FontLoader.loadFont(self.ttfName)
         }
         
-        self.mutableTextFontAttributes[NSFontAttributeName] = UIFont(name: "googleicon" as String, size: size)!
+        self.mutableTextFontAttributes[NSFontAttributeName] = UIFont(name:self.ttfName as String, size: size)!
     }
     
     public func addAttribute(attributeName:NSObject, value:AnyObject) {
@@ -48,8 +49,6 @@ import UIKit
 private class FontLoader {
     class func loadFont(name: String) {
         
-        let bundlePath = NSBundle(forClass:self.dynamicType).pathForResource("MaterialDesignIcon", ofType:"bundle")
-        
         let ttfPath = NSBundle(forClass:self.dynamicType).pathForResource(name, ofType:"ttf")
         
         let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: ttfPath!)!
@@ -67,7 +66,7 @@ private class FontLoader {
     }
 }
 
-@objc public class MDIcon {
+@objc public class MaterialDesignIcon {
     
     public static let threeDRotation24px = "\u{e600}"
     public static let threeDRotation48px = "\u{e601}"
