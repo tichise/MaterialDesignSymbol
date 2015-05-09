@@ -11,7 +11,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Sources/*.swift'
-  s.resource  = 'Resources/*.ttf'
   s.requires_arc = true
+
+  s.resource_bundles = {
+	'googleIconBundle' => ['Resources/googleicon.ttf']
+  }
 
 end

@@ -47,8 +47,10 @@ class MDSymbol: NSObject {
 
 private class FontLoader {
     class func loadFont(name: String) {
+        
         let bundle = NSBundle.mainBundle()
-        let fontURL = bundle.URLForResource(name, withExtension: "ttf")
+        let resourcePath = bundle.pathForResource("googleIconBundle", ofType:"bundle")
+        let fontURL = NSBundle.bundleWithPath(resourcePath)
         
         let data = NSData(contentsOfURL: fontURL!)!
         
