@@ -48,11 +48,9 @@ import UIKit
 private class FontLoader {
     class func loadFont(name: String) {
         
-        let bundle = NSBundle.mainBundle()
-        let resourcePath = bundle.pathForResource("googleIconBundle", ofType:"bundle")
-        let fontURL = NSBundle.bundleWithPath(resourcePath)
-        
-        let data = NSData(contentsOfURL: fontURL!)!
+        let resourcePath:NSString = NSBundle.mainBundle().pathForResource("googleIconBundle", ofType:"bundle")!
+        let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: resourcePath as String)!
+        let data : NSData = fileHandle.readDataToEndOfFile()
         
         let provider = CGDataProviderCreateWithCFData(data)
         let font = CGFontCreateWithDataProvider(provider)!
