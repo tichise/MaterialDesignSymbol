@@ -1,8 +1,8 @@
 //
 //  MaterialDesignSymbol
 //
-//  Created by tichise on 2015年5月7日 15/05/07.
-//  Copyright (c) 2015年 tichise. All rights reserved.
+//  Created by tichise on 2015/5/7 15/05/07.
+//  Copyright (c) 2015 tichise. All rights reserved.
 //
 
 import UIKit
@@ -11,19 +11,19 @@ import UIKit
     
     var text:NSString = ""
     var mutableTextFontAttributes = [NSObject : AnyObject]()
-    let ttfName:NSString = "googleicon"
     
     public init(text:NSString, size:CGFloat) {
         self.text = text
+        let ttfName = "googleicon"
         
         self.mutableTextFontAttributes = [NSObject : AnyObject]()
         self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         
-        if (UIFont.fontNamesForFamilyName(self.ttfName).count == 0) {
-            FontLoader.loadFont(self.ttfName)
+        if (UIFont.fontNamesForFamilyName(ttfName as String).count == 0) {
+            FontLoader.loadFont(ttfName as String)
         }
         
-        self.mutableTextFontAttributes[NSFontAttributeName] = UIFont(name:self.ttfName as String, size: size)!
+        self.mutableTextFontAttributes[NSFontAttributeName] = UIFont(name:ttfName as String, size: size)!
     }
     
     public func addAttribute(attributeName:NSObject, value:AnyObject) {
