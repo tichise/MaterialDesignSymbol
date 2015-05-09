@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.resource_bundles = {
-	'googleIconBundle' => ['Resources/googleicon.ttf']
+	'GoogleIconBundle' => ['Resources/*.ttf']
   }
 
 end
