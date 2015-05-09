@@ -13,8 +13,10 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 ##### Image
 
-```
+```html
 import MaterialDesignSymbol
+
 var symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
 var iconImage:UIImage = symbol.imageWithSize(CGSizeMake(25, 25))
 ```
+
