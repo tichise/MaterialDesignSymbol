@@ -17,6 +17,11 @@ class MDSymbol: NSObject {
         
         self.mutableTextFontAttributes = [NSObject : AnyObject]()
         self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        
+        if (UIFont.fontNamesForFamilyName("googleicon").count == 0) {
+            FontLoader.loadFont("googleicon")
+        }
+        
         self.mutableTextFontAttributes[NSFontAttributeName] = UIFont(name: "googleicon" as String, size: size)!
     }
     
@@ -37,5 +42,24 @@ class MDSymbol: NSObject {
         UIGraphicsEndImageContext()
         
         return image
+    }
+}
+
+private class FontLoader {
+    class func loadFont(name: String) {
+        let bundle = NSBundle.mainBundle()
+        let fontURL = bundle.URLForResource(name, withExtension: "ttf")
+        
+        let data = NSData(contentsOfURL: fontURL!)!
+        
+        let provider = CGDataProviderCreateWithCFData(data)
+        let font = CGFontCreateWithDataProvider(provider)!
+        
+        var error: Unmanaged<CFError>?
+        if !CTFontManagerRegisterGraphicsFont(font, &error) {
+            let errorDescription: CFStringRef = CFErrorCopyDescription(error!.takeUnretainedValue())
+            let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
+            NSException(name: NSInternalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+        }
     }
 }
