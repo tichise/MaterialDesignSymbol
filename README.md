@@ -9,7 +9,7 @@ Link: https://github.com/google/material-design-icons
 
 Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-#### Sample
+#### Examples
 
 ##### Image
 
@@ -20,3 +20,5 @@ var symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.l
 var iconImage:UIImage = symbol.imageWithSize(CGSizeMake(25, 25))
 ```
 
+#### Installation (CocoaPods)
+pod MaterialDesignSymbol
