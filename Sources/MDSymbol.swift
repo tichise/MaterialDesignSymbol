@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MDSymbol: NSObject {
+@objc public class MDSymbol {
     
     var text:NSString = ""
     var mutableTextFontAttributes = [NSObject : AnyObject]()

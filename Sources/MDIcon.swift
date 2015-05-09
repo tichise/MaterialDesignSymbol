@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MDIcon: NSObject {
+@objc public class MDIcon {
     
     static let threeDRotation24px = "\u{e600}"
     static let threeDRotation48px = "\u{e601}"
