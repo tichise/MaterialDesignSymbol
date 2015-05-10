@@ -70,7 +70,7 @@ private class MaterialDesignFont {
             static var onceToken : dispatch_once_t = 0
         }
         
-        let name = "googleicon"
+        let name = "material-design-icons"
         if (UIFont.fontNamesForFamilyName(name).count == 0) {
             dispatch_once(&Static.onceToken) {
                 FontLoader.loadFont(name)
