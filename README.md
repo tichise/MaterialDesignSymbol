@@ -1,4 +1,5 @@
-#### MaterialDesignIcon
+#### MaterialDesignIcon ![Cocoapods Version](https://img.shields.io/cocoapods/v/MaterialDesignSymbol.svg?style=flat) ![Platform](https://img.shields.io/cocoapods/p/MaterialDesignSymbol.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/MaterialDesignSymbol.svg?style=flat)
+==============
 
 ![image](https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/6377/_____.png)
 
