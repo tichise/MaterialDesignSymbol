@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MaterialDesignSymbol'
-  s.version = '1.3'
+  s.version = '1.4'
   s.license = 'Creative Commons Attribution 4.0 International (CC BY 4.0)'
   s.summary = 'Icon font library for Swift. Currently supports Google Material Design Icon'
   s.homepage = 'https://github.com/tichise/MaterialDesignSymbol'
