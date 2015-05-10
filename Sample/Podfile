@@ -1,0 +1,8 @@
+platform :ios, '8.1'
+
+workspace 'Sample.xcworkspace'
+xcodeproj 'Sample.xcodeproj'
+use_frameworks!
+source 'https://github.com/CocoaPods/Specs.git'
+
+pod 'MaterialDesignSymbol', :git => "https://github.com/tichise/MaterialDesignSymbol"
