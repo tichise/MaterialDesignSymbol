@@ -42,4 +42,4 @@ titleLabel.text = MaterialDesignIcon.list48px
 ```
 
 #### Installation (CocoaPods)
-pod MaterialDesignSymbol
+`pod MaterialDesignSymbol`
