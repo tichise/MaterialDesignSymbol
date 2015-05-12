@@ -32,5 +32,14 @@ var symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.l
 var iconImage:UIImage = symbol.imageWithSize(CGSizeMake(25, 25))
 ```
 
+##### Text
+
+```html
+import MaterialDesignSymbol
+
+titleLabel.font = MaterialDesignFont.fontOfSize(20)
+titleLabel.text = MaterialDesignIcon.list48px
+```
+
 #### Installation (CocoaPods)
 pod MaterialDesignSymbol
