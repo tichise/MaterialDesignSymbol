@@ -62,9 +62,9 @@ private class FontLoader {
 }
 
 
-private class MaterialDesignFont {
+public class MaterialDesignFont {
     
-    class func fontOfSize(fontSize: CGFloat) -> UIFont {
+    public class func fontOfSize(fontSize: CGFloat) -> UIFont {
         
         struct Static {
             static var onceToken : dispatch_once_t = 0
