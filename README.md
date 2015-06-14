@@ -29,6 +29,7 @@ https://github.com/tichise/EntypoSymbol
 import MaterialDesignSymbol
 
 var symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
+symbol.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
 var iconImage:UIImage = symbol.imageWithSize(CGSizeMake(25, 25))
 ```
 
