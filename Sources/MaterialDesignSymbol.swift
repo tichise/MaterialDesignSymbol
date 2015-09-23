@@ -7,27 +7,25 @@
 
 import UIKit
 
-@objc public class MaterialDesignSymbol {
+public class MaterialDesignSymbol {
     
     var text:NSString = ""
-    var mutableTextFontAttributes = [NSObject : AnyObject]()
+    var mutableTextFontAttributes = [String : AnyObject]()
     
     public init(text:NSString, size:CGFloat) {
         self.text = text
         
-        self.mutableTextFontAttributes = [NSObject : AnyObject]()
+        self.mutableTextFontAttributes = [String : AnyObject]()
         self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         
         self.mutableTextFontAttributes[NSFontAttributeName] = MaterialDesignFont.fontOfSize(size)
     }
     
-    public func addAttribute(attributeName:NSObject, value:AnyObject) {
-        self.mutableTextFontAttributes[attributeName as NSObject] = value
+    public func addAttribute(attributeName:String, value:AnyObject) {
+        self.mutableTextFontAttributes[attributeName] = value
     }
     
     public func imageWithSize(size:CGSize)->UIImage {
-        let imageRect = CGRectMake(0,0,size.width, size.height)
-        
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         
         let textRect  = CGRectMake(0, 0, size.width, size.height)
@@ -81,7 +79,7 @@ public class MaterialDesignFont {
     }
 }
 
-@objc public class MaterialDesignIcon {
+public class MaterialDesignIcon {
     
     public static let threeDRotation24px = "\u{e600}"
     public static let threeDRotation48px = "\u{e601}"
