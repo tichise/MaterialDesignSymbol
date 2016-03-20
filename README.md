@@ -5,6 +5,8 @@
 
 Icon font library for Swift. Currently supports GoogleMaterialDesignIcons
 
+Googleのマテリアルデザインアイコンをシンボルフォントで呼び出せるライブラリです。
+
 #### Licence
 font used in this project
 
