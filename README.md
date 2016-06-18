@@ -5,7 +5,7 @@
 
 Icon font library for Swift. Currently supports GoogleMaterialDesignIcons
 
-Googleのマテリアルデザインアイコンをシンボルフォントで呼び出せるライブラリです。
+Googleのマテリアルデザインアイコンをシンボルフォントで呼び出せるライブラリです。詳細な使い方は[こちら](http://qiita.com/tichise/items/9fd290f1cc2af4796826)に記載してます。
 
 #### Licence
 font used in this project
