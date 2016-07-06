@@ -3,7 +3,8 @@
 
 <img src="https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/6377/_____.png" width="160px">
 
-Icon font library for Swift. Currently supports GoogleMaterialDesignIcons
+Icon font library for Swift. Currently supports GoogleMaterialDesignIcons. ObjectiveC version is [here](https://github.com/tichise/MaterialDesignSymbolObjC).
+
 
 Googleのマテリアルデザインアイコンをシンボルフォントで呼び出せるライブラリです。詳細な使い方は[こちら](http://qiita.com/tichise/items/9fd290f1cc2af4796826)に記載してます。
 
