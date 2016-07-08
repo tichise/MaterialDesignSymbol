@@ -5,4 +5,18 @@ xcodeproj 'Sample.xcodeproj'
 use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'MaterialDesignSymbol', :git => "https://github.com/tichise/MaterialDesignSymbol"
+pod 'MaterialDesignSymbol', :path => '../'
+
+# Pods配下のプロジェクトのBuild Active Architecture OnlyをNOにする
+post_install do |installer|
+    # PodのBuildActiveArchitectureOnlyをNoに変更
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+    end
+    # PodのBuildActiveArchitectureOnlyをすべてNoに変更
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+        end
+    end
+end
