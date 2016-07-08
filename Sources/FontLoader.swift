@@ -7,11 +7,14 @@
 
 import UIKit
 
-/// フォント読み込み用クラス
+/**
+ フォント読み込み用クラス
+ */
 public class FontLoader {
     
     /**
      引数で渡ってきたフォントを読み込みます
+     
      - parameter name: フォントファイル名
      */
     public class func loadFont(name: String) {

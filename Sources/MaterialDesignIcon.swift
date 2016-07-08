@@ -7,6 +7,9 @@
 
 import UIKit
 
+/**
+ * マテリアルデザインアイコンのコードを返すクラス
+ */
 public class MaterialDesignIcon {
     
     public static let threeDRotation24px = "\u{e600}"

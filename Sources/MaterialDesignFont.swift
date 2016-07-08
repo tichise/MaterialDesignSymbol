@@ -7,6 +7,9 @@
 
 import UIKit
 
+/**
+ マテリアルデザインアイコンをUIFont形式で呼ぶに使うクラス
+ */
 public class MaterialDesignFont {
     
     /**

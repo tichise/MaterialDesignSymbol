@@ -7,12 +7,13 @@
 
 import UIKit
 
+/**
+ * MaterialDesignSymbolのメインクラス
+ */
 public class MaterialDesignSymbol {
     
-    // MARK: - Properties
     var text:NSString = ""
     
-    // MARK: - Properties
     var mutableTextFontAttributes = [String : AnyObject]()
     
     public init(text:NSString, size:CGFloat) {
@@ -32,7 +33,6 @@ public class MaterialDesignSymbol {
     /**
      // アイコンを画像形式で取得するのに使うメソッド
      - parameter size: サイズ
-     
      - returns: UIImage
      */
     public func imageWithSize(size:CGSize)->UIImage {
