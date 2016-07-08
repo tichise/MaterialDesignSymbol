@@ -34,7 +34,7 @@ class SampleTests: XCTestCase {
         titleLabel.font = MaterialDesignFont.fontOfSize(20)
         titleLabel.text = MaterialDesignIcon.list48px
         
-        XCTAssertTrue(titleLabel.text?.characters.count == 1)
+        XCTAssertEqual(titleLabel.text?.characters.count, 1)
     }
     
 }
