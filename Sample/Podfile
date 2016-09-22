@@ -1,6 +1,6 @@
 platform :ios, '9.0'
 
-target Sample do
+target 'Sample' do
   use_frameworks!
   pod 'MaterialDesignSymbol', :path => '../'
 end
