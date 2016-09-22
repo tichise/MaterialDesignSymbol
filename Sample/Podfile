@@ -1,9 +1,6 @@
-target 'Sample' do
+platform :ios, '9.0'
+
+target Sample do
   use_frameworks!
-
   pod 'MaterialDesignSymbol', :path => '../'
-
-  target 'SampleTests' do
-    inherit! :search_paths
-  end
 end
