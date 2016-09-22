@@ -10,29 +10,27 @@ import UIKit
 /**
  マテリアルデザインアイコンをUIFont形式で呼ぶに使うクラス
  */
-public class MaterialDesignFont {
+open class MaterialDesignFont {
     
     /**
      アイコンをフォント形式で呼び出すのに使うメソッド
      - parameter fontSize: フォントサイズ
      - returns: UIFont
      */
-    public class func fontOfSize(fontSize: CGFloat) -> UIFont {
+    open class func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         
         struct Static {
             
             // MARK: - Properties
-            static var onceToken : dispatch_once_t = 0
+            static var onceToken : Int = 0
         }
         
         /// 呼び出すアイコンファイル名
         let name = "material-design-icons"
         
         // アイコンを呼び出す
-        if (UIFont.fontNamesForFamilyName(name).count == 0) {
-            dispatch_once(&Static.onceToken) {
-                FontLoader.loadFont(name)
-            }
+        if (UIFont.fontNames(forFamilyName: name).count == 0) {
+            FontLoader.loadFont(name)
         }
         
         return UIFont(name: name, size: fontSize)!

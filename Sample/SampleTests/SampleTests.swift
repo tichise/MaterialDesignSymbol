@@ -24,7 +24,7 @@ class SampleTests: XCTestCase {
         
         let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
         symbol.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-        let iconImage:UIImage = symbol.imageWithSize(CGSizeMake(25, 25))
+        let iconImage:UIImage = symbol.imageWithSize(CGSize(width: 25, height: 25))
         
         XCTAssertTrue(iconImage.size.width > 0 && iconImage.size.height > 0)
     }
