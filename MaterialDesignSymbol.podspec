@@ -1,22 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MaterialDesignSymbol'
   s.version = '2.0'
-  s.license = 'MIT'
-  s.summary = 'Icon font library for Swift. Currently supports Google Material Design Icon'
-  s.homepage = 'https://github.com/tichise/MaterialDesignSymbol'
-  s.social_media_url = 'http://twitter.com/tichise'
-  s.author = "Takuya Ichise"
-  s.source = { :git => 'https://github.com/tichise/MaterialDesignSymbol.git', :tag => s.version }
-
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = "10.10"
-  s.watchos.deployment_target = "2.0"
-  s.tvos.deployment_target = "9.0"
-
-  s.source_files = 'Sources/*.swift'
-  s.requires_arc = true
-  s.resources = 'Resources/*.ttf'
-  
   s.license = {
     :type => "MIT",
     :text => <<-LICENSE
@@ -26,7 +10,17 @@ Pod::Spec.new do |s|
       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     LICENSE
   }
-  
+  s.summary = 'Icon font library for Swift. Currently supports Google Material Design Icon'
+  s.homepage = 'https://github.com/tichise/MaterialDesignSymbol'
+  s.social_media_url = 'http://twitter.com/tichise'
+  s.author = "Takuya Ichise"
+  s.source = { :git => 'https://github.com/tichise/MaterialDesignSymbol.git', :tag => s.version }
+
+  s.ios.deployment_target = '8.0'
+
+  s.source_files = 'Sources/*.swift'
+  s.requires_arc = true
+  s.resources = 'Resources/*.ttf'
   s.xcconfig = {
     'SWIFT_VERSION' => '3'
   }
