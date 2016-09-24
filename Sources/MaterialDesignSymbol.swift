@@ -45,6 +45,6 @@ public class MaterialDesignSymbol {
         
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
 }
