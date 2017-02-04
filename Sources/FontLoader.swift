@@ -19,20 +19,20 @@ public class FontLoader {
      */
     public class func loadFont(name: String) {
         
-        let ttfPath = NSBundle(forClass:object_getClass(self)).pathForResource(name, ofType:"ttf")
+        let ttfPath = Bundle(for:object_getClass(self)).path(forResource: name, ofType:"ttf")
         
-        let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: ttfPath!)!
-        let data : NSData = fileHandle.readDataToEndOfFile()
+        let fileHandle : FileHandle = FileHandle(forReadingAtPath: ttfPath!)!
+        let data : NSData = fileHandle.readDataToEndOfFile() as NSData
         
-        let provider = CGDataProviderCreateWithCFData(data)
-        let font = CGFontCreateWithDataProvider(provider!)
+        let provider = CGDataProvider(data: data)
+        let font = CGFont(provider!)
         
         var error: Unmanaged<CFError>?
         
         if !CTFontManagerRegisterGraphicsFont(font, &error) {
-            let errorDescription: CFStringRef = CFErrorCopyDescription(error!.takeUnretainedValue())
+            let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
             let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-            NSException(name: NSInternalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+            NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
         }
     }
 }
