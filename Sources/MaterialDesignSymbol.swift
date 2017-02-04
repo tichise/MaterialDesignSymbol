@@ -20,7 +20,7 @@ public class MaterialDesignSymbol {
         self.text = text
         
         self.mutableTextFontAttributes = [String : AnyObject]()
-        self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         
         self.mutableTextFontAttributes[NSFontAttributeName] = MaterialDesignFont.fontOfSize(size)
     }
@@ -38,8 +38,8 @@ public class MaterialDesignSymbol {
     public func imageWithSize(size:CGSize)->UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         
-        let textRect  = CGRectMake(0, 0, size.width, size.height)
-        self.text.drawInRect(textRect, withAttributes: self.mutableTextFontAttributes)
+        let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        self.text.draw(in: textRect, withAttributes: self.mutableTextFontAttributes)
         
         let image = UIGraphicsGetImageFromCurrentImageContext();
         
