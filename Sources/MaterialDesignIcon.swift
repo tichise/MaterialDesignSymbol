@@ -10,6 +10,7 @@ import UIKit
 /**
  * マテリアルデザインアイコンのコードを返すクラス
  */
+<<<<<<< HEAD
 open class MaterialDesignIcon {
     
     open static let threeDRotation24px = "\u{e600}"
@@ -1673,4 +1674,7 @@ open class MaterialDesignIcon {
     open static let whatshot18px = "\u{ec7a}"
     open static let whatshot24px = "\u{ec7b}"
     open static let whatshot48px = "\u{ec7c}"
+=======
+public class MaterialDesignIcon {
+>>>>>>> master
 }

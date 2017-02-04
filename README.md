@@ -38,7 +38,13 @@ titleLabel.text = MaterialDesignIcon.list48px
 ```
 
 #### Installation (CocoaPods)
+##### swift2.3
 `pod MaterialDesignSymbol`
+
+##### swift3.0
+This has provided a trial basis
+
+`pod 'MaterialDesignSymbol', :git => 'https://github.com/tichise/MaterialDesignSymbol', :branch => 'swift3'`
 
 #### Related products
 

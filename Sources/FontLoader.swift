@@ -24,8 +24,13 @@ open class FontLoader {
         let fileHandle : FileHandle = FileHandle(forReadingAtPath: ttfPath!)!
         let data : Data = fileHandle.readDataToEndOfFile()
         
+<<<<<<< HEAD
         let provider = CGDataProvider(data: data as CFData)
         let font = CGFont(provider!)
+=======
+        let provider = CGDataProviderCreateWithCFData(data)
+        let font = CGFontCreateWithDataProvider(provider!)
+>>>>>>> master
         
         var error: Unmanaged<CFError>?
         
