@@ -23,9 +23,9 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 ```html
 import MaterialDesignSymbol
 
-var symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
-symbol.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-var iconImage:UIImage = symbol.imageWithSize(CGSizeMake(25, 25))
+let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px as NSString, size:25)
+symbol.addAttribute(attributeName: NSForegroundColorAttributeName, value: UIColor.red)
+let iconImage:UIImage = symbol.imageWithSize(size: CGSize(width:25, height:25))
 ```
 
 ##### Text
