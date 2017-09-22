@@ -10,7 +10,7 @@ import UIKit
 /**
  フォント読み込み用クラス
  */
-public class FontLoader {
+public class FontLoader:NSObject {
     
     /**
      引数で渡ってきたフォントを読み込みます

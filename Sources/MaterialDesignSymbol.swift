@@ -10,7 +10,7 @@ import UIKit
 /**
  * MaterialDesignSymbolのメインクラス
  */
-public class MaterialDesignSymbol {
+public class MaterialDesignSymbol:NSObject {
     
     var text:NSString = ""
     
@@ -35,7 +35,7 @@ public class MaterialDesignSymbol {
      - parameter size: サイズ
      - returns: UIImage
      */
-    public func imageWithSize(size:CGSize)->UIImage {
+    public func image(size:CGSize)->UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         
         let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)

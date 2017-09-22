@@ -15,7 +15,7 @@ Link: https://github.com/google/material-design-icons
 
 Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-#### Examples
+#### Examples Swift
 
 ##### Image
 
@@ -36,16 +36,27 @@ titleLabel.font = MaterialDesignFont.fontOfSize(20)
 titleLabel.text = MaterialDesignIcon.list48px
 ```
 
+#### Examples ObjectiveC
+
+##### Image
+```html
+@import MaterialDesignSymbol;
+
+    
+MaterialDesignSymbol *symbol = [[MaterialDesignSymbol alloc] initWithText:[MaterialDesignIcon home48px] size:30];
+[symbol addAttributeWithAttributeName:NSForegroundColorAttributeName value:[UIColor blackColor]];
+sampleImageView.image = [symbol imageWithSize:CGSizeMake(30, 30)];
+```
+
+##### Text
+
+```html
+@import MaterialDesignSymbol;
+
+sampleLabel.font = [MaterialDesignFont fontOfSize:20];
+sampleLabel.text = [MaterialDesignIcon clear48px];
+```
+
+
 #### Installation (CocoaPods)
 `pod MaterialDesignSymbol`
-
-#### Related products
-
-- Font Library
- - [MaterialDesignSymbol](https://github.com/tichise/MaterialDesignSymbol) Swift
- - [EntypoSymbol](https://github.com/tichise/EntypoSymbol) Swift
- - [MaterialDesignSymbolObjC](https://github.com/tichise/MaterialDesignSymbolObjC) ObjectiveC
- - [EntypoSymbolObjC](https://github.com/tichise/EntypoSymbolObjC) ObjectiveC
-- Color Library
-  - [MaterialDesignColor](https://github.com/tichise/MaterialDesignColor) Swift
-  - [MaterialDesignColorObjC](https://github.com/tichise/MaterialDesignColorObjC) ObjectiveC
