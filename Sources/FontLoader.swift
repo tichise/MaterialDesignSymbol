@@ -10,21 +10,21 @@ import UIKit
 /**
  フォント読み込み用クラス
  */
-public class FontLoader:NSObject {
+open class FontLoader:NSObject {
     
     /**
      引数で渡ってきたフォントを読み込みます
      
      - parameter name: フォントファイル名
      */
-    public class func loadFont(name: String) {
+    @objc open class func loadFont(_ name: String) {
         
         let ttfPath = Bundle(for:object_getClass(self)!).path(forResource: name, ofType:"ttf")
         
         let fileHandle : FileHandle = FileHandle(forReadingAtPath: ttfPath!)!
-        let data : NSData = fileHandle.readDataToEndOfFile() as NSData
+        let data : Data = (fileHandle.readDataToEndOfFile() as NSData) as Data
         
-        let provider = CGDataProvider(data: data)
+        let provider = CGDataProvider(data: data as CFData)
         let font = CGFont(provider!)
         
         var error: Unmanaged<CFError>?
