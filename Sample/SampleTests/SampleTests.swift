@@ -22,9 +22,9 @@ class SampleTests: XCTestCase {
     
     func testImage() {
         
-        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
-        symbol.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-        let iconImage:UIImage = symbol.imageWithSize(CGSize(width: 25, height: 25))
+        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px as NSString, size:25)
+        symbol.addAttribute(attributeName: NSForegroundColorAttributeName, value: UIColor.red)
+        let iconImage:UIImage = symbol.image(size:CGSize(width: 25, height: 25)
         
         XCTAssertTrue(iconImage.size.width > 0 && iconImage.size.height > 0)
     }

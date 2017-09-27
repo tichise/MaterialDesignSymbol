@@ -14,19 +14,19 @@ public class MaterialDesignSymbol:NSObject {
     
     var text:NSString = ""
     
-    var mutableTextFontAttributes = [String : AnyObject]()
+    var mutableTextFontAttributes = [NSAttributedStringKey : AnyObject]()
     
     public init(text:NSString, size:CGFloat) {
         self.text = text
         
-        self.mutableTextFontAttributes = [String : AnyObject]()
-        self.mutableTextFontAttributes[NSParagraphStyleAttributeName] = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        self.mutableTextFontAttributes = [NSAttributedStringKey : AnyObject]()
+        self.mutableTextFontAttributes[NSAttributedStringKey.paragraphStyle] = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         
-        self.mutableTextFontAttributes[NSFontAttributeName] = MaterialDesignFont.fontOfSize(size)
+        self.mutableTextFontAttributes[NSAttributedStringKey.font] = MaterialDesignFont.fontOfSize(size)
     }
     
     // MARK: - Method
-    public func addAttribute(attributeName:String, value:AnyObject) {
+    public func addAttribute(attributeName:NSAttributedStringKey, value:AnyObject) {
         self.mutableTextFontAttributes[attributeName] = value
     }
 
