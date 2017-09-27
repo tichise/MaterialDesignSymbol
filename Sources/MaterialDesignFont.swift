@@ -30,7 +30,7 @@ open class MaterialDesignFont:NSObject {
         
         // アイコンを呼び出す
         if (UIFont.fontNames(forFamilyName: name).count == 0) {
-            FontLoader.loadFont(name: name)
+            FontLoader.loadFont(name)
         }
         
         return UIFont(name: name, size: fontSize)!
