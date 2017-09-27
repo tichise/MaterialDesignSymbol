@@ -17,7 +17,7 @@ open class FontLoader:NSObject {
      
      - parameter name: フォントファイル名
      */
-    open class func loadFont(_ name: String) {
+    @objc open class func loadFont(_ name: String) {
         
         let ttfPath = Bundle(for:object_getClass(self)!).path(forResource: name, ofType:"ttf")
         
