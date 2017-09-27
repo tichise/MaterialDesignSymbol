@@ -10,5 +10,5 @@ import UIKit
 /**
  * マテリアルデザインアイコンのコードを返すクラス
  */
-public class MaterialDesignIcon:NSObject {
+open class MaterialDesignIcon:NSObject {
 }

@@ -10,7 +10,7 @@ import UIKit
 /**
  マテリアルデザインアイコンをUIFont形式で呼ぶに使うクラス
  */
-public class MaterialDesignFont:NSObject {
+open class MaterialDesignFont:NSObject {
     
     /**
      アイコンをフォント形式で呼び出すのに使うメソッド
