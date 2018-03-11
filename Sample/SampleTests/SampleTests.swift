@@ -22,11 +22,12 @@ class SampleTests: XCTestCase {
     
     func testImage() {
         
-        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px as NSString, size:25)
-        symbol.addAttribute(attributeName: NSForegroundColorAttributeName, value: UIColor.red)
-        let iconImage:UIImage = symbol.image(size:CGSize(width: 25, height: 25)
+        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:(MaterialDesignIcon.list48px as NSString) as String, size:25)
+        symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor, value: UIColor.red)
+        let iconImage:UIImage = symbol.image(size:CGSize(width: 25, height: 25),
         
-        XCTAssertTrue(iconImage.size.width > 0 && iconImage.size.height > 0)
+        XCTAssertTrue(iconImage.size.width > 0)
+        XCTAssertTrue(iconImage.size.height > 0)
     }
     
     func testFont() {
@@ -34,7 +35,7 @@ class SampleTests: XCTestCase {
         titleLabel.font = MaterialDesignFont.fontOfSize(20)
         titleLabel.text = MaterialDesignIcon.list48px
         
-        XCTAssertEqual(titleLabel.text?.characters.count, 1)
+        XCTAssertEqual(titleLabel.text?.count, 1)
     }
     
 }
