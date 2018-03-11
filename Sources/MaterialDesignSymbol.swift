@@ -12,11 +12,11 @@ import UIKit
  */
 open class MaterialDesignSymbol:NSObject {
     
-    var text:NSString = ""
+    var text:String = ""
     
     var mutableTextFontAttributes = [NSAttributedStringKey : AnyObject]()
     
-    @objc public init(text:NSString, size:CGFloat) {
+    @objc public init(text:String, size:CGFloat) {
         self.text = text
         
         self.mutableTextFontAttributes = [NSAttributedStringKey : AnyObject]()
