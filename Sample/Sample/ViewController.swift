@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.viewHeadline48px as NSString, size:30)
+        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.viewHeadline48px, size:30)
         let iconImage:UIImage = symbol.image(size: CGSize(width: 30, height: 30))
         self.sampleImageView.image = iconImage
 

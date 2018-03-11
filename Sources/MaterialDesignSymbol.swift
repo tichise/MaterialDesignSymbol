@@ -12,21 +12,21 @@ import UIKit
  */
 open class MaterialDesignSymbol:NSObject {
     
-    var text:NSString = ""
+    var text:String = ""
     
-    var mutableTextFontAttributes = [NSAttributedStringKey : AnyObject]()
+    var mutableTextFontAttributes = [NSAttributedStringKey : Any]()
     
-    @objc public init(text:NSString, size:CGFloat) {
+    @objc public init(text:String, size:CGFloat) {
         self.text = text
         
-        self.mutableTextFontAttributes = [NSAttributedStringKey : AnyObject]()
+        self.mutableTextFontAttributes = [NSAttributedStringKey : Any]()
         self.mutableTextFontAttributes[NSAttributedStringKey.paragraphStyle] = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         
         self.mutableTextFontAttributes[NSAttributedStringKey.font] = MaterialDesignFont.fontOfSize(size)
     }
     
     // MARK: - Method
-    @objc public func addAttribute(attributeName:NSAttributedStringKey, value:AnyObject) {
+    @objc public func addAttribute(attributeName:NSAttributedStringKey, value:Any) {
         self.mutableTextFontAttributes[attributeName] = value
     }
 
