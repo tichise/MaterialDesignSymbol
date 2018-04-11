@@ -22,7 +22,7 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 ```html
 import MaterialDesignSymbol
 
-let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px as NSString, size:25)
+let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
 symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor, value: UIColor.red)
 let iconImage:UIImage = symbol.image(size: CGSize(width:25, height:25))
 ```
