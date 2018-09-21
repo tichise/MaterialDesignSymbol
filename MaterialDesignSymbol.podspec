@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MaterialDesignSymbol'
-  s.version = '2.2.2'
+  s.version = '2.3.0'
   s.license = {
     :type => "MIT",
     :text => <<-LICENSE
@@ -21,7 +21,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/*.swift'
   s.requires_arc = true
   s.resources = 'Resources/*.ttf'
-  s.xcconfig = {
-    'SWIFT_VERSION' => '4'
-  }
 end
