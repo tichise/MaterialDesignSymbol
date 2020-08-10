@@ -20,7 +20,10 @@ open class MaterialDesignSymbol {
         self.text = text
 
         self.mutableTextFontAttributes = [NSAttributedString.Key: Any]()
-        self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        
+        if let paragraphStyle = NSMutableParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle {
+            self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+        }
 
         self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.fontOfSize(size)
     }
