@@ -18,13 +18,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // UIImage
-        let symbol = MaterialDesignSymbol(text: MaterialDesignIcon.viewHeadline48px, size: 30)
+        let symbol = MaterialDesignSymbol(icon: .viewHeadline48px, size: 30)
         let iconImage = symbol.image(size: CGSize(width: 30, height: 30))
         self.sampleImageView.image = iconImage
 
         // String
         sampleLabel.font = MaterialDesignFont.fontOfSize(20)
-        sampleLabel.text = MaterialDesignIcon.clear48px
+        sampleLabel.text = MaterialDesignIconEnum.clear48px.rawValue
     }
 
     override func didReceiveMemoryWarning() {
