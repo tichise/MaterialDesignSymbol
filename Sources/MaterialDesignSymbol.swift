@@ -12,7 +12,7 @@ import UIKit
  */
 open class MaterialDesignSymbol {
     
-    var text:String = ""
+    var text = ""
     
     var mutableTextFontAttributes = [NSAttributedString.Key : Any]()
     

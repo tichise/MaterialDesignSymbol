@@ -17,10 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.viewHeadline48px, size:30)
-        let iconImage:UIImage = symbol.image(size: CGSize(width: 30, height: 30))
+        // UIImage
+        let symbol = MaterialDesignSymbol(text: MaterialDesignIcon.viewHeadline48px, size:30)
+        let iconImage = symbol.image(size: CGSize(width: 30, height: 30))
         self.sampleImageView.image = iconImage
 
+        // String
         sampleLabel.font = MaterialDesignFont.fontOfSize(20)
         sampleLabel.text = MaterialDesignIcon.clear48px
     }
