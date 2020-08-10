@@ -10,7 +10,7 @@ import UIKit
 /**
  * MaterialDesignSymbolのメインクラス
  */
-open class MaterialDesignSymbol {
+public class MaterialDesignSymbol {
 
     var text = ""
 
