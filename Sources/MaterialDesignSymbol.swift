@@ -14,7 +14,7 @@ open class MaterialDesignSymbol {
     
     var text = ""
     
-    var mutableTextFontAttributes = [NSAttributedString.Key : Any]()
+    var mutableTextFontAttributes = [NSAttributedString.Key: Any]()
     
     public init(text: String, size: CGFloat) {
         self.text = text

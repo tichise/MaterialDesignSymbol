@@ -10,15 +10,15 @@ import UIKit
 import MaterialDesignSymbol
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet var sampleImageView: UIImageView!
     @IBOutlet var sampleLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // UIImage
-        let symbol = MaterialDesignSymbol(text: MaterialDesignIcon.viewHeadline48px, size:30)
+        let symbol = MaterialDesignSymbol(text: MaterialDesignIcon.viewHeadline48px, size: 30)
         let iconImage = symbol.image(size: CGSize(width: 30, height: 30))
         self.sampleImageView.image = iconImage
 
@@ -31,4 +31,3 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
-

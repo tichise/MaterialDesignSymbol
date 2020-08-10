@@ -11,31 +11,30 @@ import XCTest
 import MaterialDesignSymbol
 
 class SampleTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testImage() {
-        
-        let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:(MaterialDesignIcon.list48px as NSString) as String, size:25)
+
+        let symbol = MaterialDesignSymbol(text: MaterialDesignIcon.list48px, size: 25)
         symbol.addAttribute(attributeName: NSAttributedString.Key.foregroundColor, value: UIColor.red)
-        let iconImage = symbol.image(size:CGSize(width: 25, height: 25))
-        
+        let iconImage = symbol.image(size: CGSize(width: 25, height: 25))
+
         XCTAssertTrue(iconImage.size.width > 0)
         XCTAssertTrue(iconImage.size.height > 0)
     }
-    
+
     func testFont() {
-        let titleLabel:UILabel = UILabel.init()
+        let titleLabel = UILabel.init()
         titleLabel.font = MaterialDesignFont.fontOfSize(20)
         titleLabel.text = MaterialDesignIcon.list48px
-        
+
         XCTAssertEqual(titleLabel.text?.count, 1)
     }
-    
 }
