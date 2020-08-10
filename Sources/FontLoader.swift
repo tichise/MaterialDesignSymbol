@@ -10,29 +10,43 @@ import UIKit
 /**
  フォント読み込み用クラス
  */
-open class FontLoader:NSObject {
+public class FontLoader {
     
     /**
      引数で渡ってきたフォントを読み込みます
-     
      - parameter name: フォントファイル名
      */
-    @objc open class func loadFont(_ name: String) {
-        
-        let ttfPath = Bundle(for:object_getClass(self)!).path(forResource: name, ofType:"ttf")
-        
-        let fileHandle : FileHandle = FileHandle(forReadingAtPath: ttfPath!)!
-        let data : Data = (fileHandle.readDataToEndOfFile() as NSData) as Data
-        
-        let provider = CGDataProvider(data: data as CFData)
-        let font = CGFont(provider!)
-        
+    public class func loadFont(_ name: String) throws {
+
+        guard let ttfPath = Bundle(for: object_getClass(self)!).path(forResource: name, ofType: "ttf") else {
+            throw FontError.invalidFontFile
+        }
+
+        guard let fileHandle = FileHandle(forReadingAtPath: ttfPath) else {
+            throw FontError.fontPathNotFound
+        }
+
+        let data = fileHandle.readDataToEndOfFile()
+
+        guard let provider = CGDataProvider(data: data as CFData) else {
+            throw FontError.invalidFontFile
+        }
+
+        guard let font = CGFont(provider) else {
+            throw FontError.initFontError
+        }
+
         var error: Unmanaged<CFError>?
-        
-        if !CTFontManagerRegisterGraphicsFont(font!, &error) {
-            let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
-            let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-            NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+
+        if !CTFontManagerRegisterGraphicsFont(font, &error) {
+            throw FontError.registerFailed
         }
     }
+}
+
+public enum FontError: Error {
+  case invalidFontFile
+  case fontPathNotFound
+  case initFontError
+  case registerFailed
 }
