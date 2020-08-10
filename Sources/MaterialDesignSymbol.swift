@@ -26,7 +26,7 @@ open class MaterialDesignSymbol {
     }
     
     // MARK: - Method
-    public func addAttribute(attributeName:NSAttributedString.Key, value:Any) {
+    public func addAttribute(attributeName: NSAttributedString.Key, value: Any) {
         self.mutableTextFontAttributes[attributeName] = value
     }
 
@@ -41,7 +41,7 @@ open class MaterialDesignSymbol {
         let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         self.text.draw(in: textRect, withAttributes: self.mutableTextFontAttributes)
         
-        let image = UIGraphicsGetImageFromCurrentImageContext();
+        let image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
         
