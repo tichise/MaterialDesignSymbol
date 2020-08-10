@@ -11,20 +11,20 @@ import UIKit
  * MaterialDesignSymbolのメインクラス
  */
 open class MaterialDesignSymbol {
-    
+
     var text = ""
-    
+
     var mutableTextFontAttributes = [NSAttributedString.Key: Any]()
-    
+
     public init(text: String, size: CGFloat) {
         self.text = text
-        
-        self.mutableTextFontAttributes = [NSAttributedString.Key : Any]()
+
+        self.mutableTextFontAttributes = [NSAttributedString.Key: Any]()
         self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        
+
         self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.fontOfSize(size)
     }
-    
+
     // MARK: - Method
     public func addAttribute(attributeName: NSAttributedString.Key, value: Any) {
         self.mutableTextFontAttributes[attributeName] = value
@@ -35,16 +35,16 @@ open class MaterialDesignSymbol {
      - parameter size: サイズ
      - returns: UIImage
      */
-    public func image(size:CGSize) -> UIImage {
+    public func image(size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        
+
         let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         self.text.draw(in: textRect, withAttributes: self.mutableTextFontAttributes)
-        
+
         let image = UIGraphicsGetImageFromCurrentImageContext()
-        
+
         UIGraphicsEndImageContext()
-        
+
         return image!
     }
 }
