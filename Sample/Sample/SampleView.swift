@@ -9,22 +9,17 @@
 import SwiftUI
 import MaterialDesignSymbol
 
-@available(iOS 13.0, *)
-/*
-extension Image {
-    init(icon: MaterialDesignIcon,  size: CGFloat) {
-        let symbol = MaterialDesignSymbol(text:  icon.raw, size: size)
-        symbol.addAttribute(attributeName: NSAttributedString.Key.foregroundColor, value: UIColor.black)
+@available(iOS 13.0.0, *)
+struct SampleView: View {
         
-        let iconImage = symbol.image(size: CGSize(width: size, height: size))
-        
-        self.init(uiImage: iconImage)
+    var body: some View {
+        Image(icon: .work48px, size: 50)
     }
 }
 
-struct ImageSymbol_Previews: PreviewProvider {
+@available(iOS 13.0.0, *)
+struct SampleView_Previews: PreviewProvider {
     static var previews: some View {
-        Image(iconText: MaterialDesignIcon.lens24px, size: 100)
+        SampleView()
     }
 }
-*/

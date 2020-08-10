@@ -8,7 +8,8 @@
 import UIKit
 
 /**
- * マテリアルデザインアイコンのコードを返すクラス
+ * マテリアルデザインアイコンのコードを返す構造体
  */
+@available(iOS, deprecated: 13.0)
 public struct MaterialDesignIcon {
 }

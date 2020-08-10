@@ -15,7 +15,20 @@ public class MaterialDesignSymbol {
     var text = ""
 
     var mutableTextFontAttributes = [NSAttributedString.Key: Any]()
+    
+    public init(icon: MaterialDesignIconEnum, size: CGFloat) {
+        self.text = icon.rawValue
 
+        self.mutableTextFontAttributes = [NSAttributedString.Key: Any]()
+        
+        if let paragraphStyle = NSMutableParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle {
+            self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+        }
+
+        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.fontOfSize(size)
+    }
+
+    @available(iOS, deprecated: 13.0)
     public init(text: String, size: CGFloat) {
         self.text = text
 
