@@ -11,8 +11,8 @@ import MaterialDesignSymbol
 
 class ViewController: UIViewController {
     
-    @IBOutlet var sampleImageView:UIImageView!
-    @IBOutlet var sampleLabel:UILabel!
+    @IBOutlet var sampleImageView: UIImageView!
+    @IBOutlet var sampleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

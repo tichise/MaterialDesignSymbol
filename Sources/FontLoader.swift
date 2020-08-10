@@ -19,10 +19,10 @@ open class FontLoader {
      */
     open class func loadFont(_ name: String) {
         
-        let ttfPath = Bundle(for:object_getClass(self)!).path(forResource: name, ofType:"ttf")
+        let ttfPath = Bundle(for: object_getClass(self)!).path(forResource: name, ofType:"ttf")
         
-        let fileHandle : FileHandle = FileHandle(forReadingAtPath: ttfPath!)!
-        let data : Data = (fileHandle.readDataToEndOfFile() as NSData) as Data
+        let fileHandle = FileHandle(forReadingAtPath: ttfPath!)!
+        let data = fileHandle.readDataToEndOfFile()
         
         let provider = CGDataProvider(data: data as CFData)
         let font = CGFont(provider!)
@@ -32,6 +32,7 @@ open class FontLoader {
         if !CTFontManagerRegisterGraphicsFont(font!, &error) {
             let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
             let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
+            
             NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
         }
     }

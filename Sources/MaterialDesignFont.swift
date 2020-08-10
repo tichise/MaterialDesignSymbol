@@ -22,14 +22,14 @@ open class MaterialDesignFont {
         struct Static {
             
             // MARK: - Properties
-            static var onceToken : Int = 0
+            static var onceToken = 0
         }
         
         /// 呼び出すアイコンファイル名
         let name = "material-design-icons"
         
         // アイコンを呼び出す
-        if (UIFont.fontNames(forFamilyName: name).count == 0) {
+        if UIFont.fontNames(forFamilyName: name).count == 0 {
             FontLoader.loadFont(name)
         }
         
