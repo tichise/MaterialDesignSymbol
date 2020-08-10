@@ -10,14 +10,14 @@ import UIKit
 /**
  マテリアルデザインアイコンをUIFont形式で呼ぶに使うクラス
  */
-open class MaterialDesignFont:NSObject {
+open class MaterialDesignFont {
     
     /**
      アイコンをフォント形式で呼び出すのに使うメソッド
      - parameter fontSize: フォントサイズ
      - returns: UIFont
      */
-    @objc open class func fontOfSize(_ fontSize: CGFloat) -> UIFont {
+    open class func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         
         struct Static {
             

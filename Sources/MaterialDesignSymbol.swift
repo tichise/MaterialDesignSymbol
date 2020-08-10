@@ -10,13 +10,13 @@ import UIKit
 /**
  * MaterialDesignSymbolのメインクラス
  */
-open class MaterialDesignSymbol:NSObject {
+open class MaterialDesignSymbol {
     
     var text:String = ""
     
     var mutableTextFontAttributes = [NSAttributedString.Key : Any]()
     
-    @objc public init(text:String, size:CGFloat) {
+    public init(text: String, size: CGFloat) {
         self.text = text
         
         self.mutableTextFontAttributes = [NSAttributedString.Key : Any]()
@@ -26,7 +26,7 @@ open class MaterialDesignSymbol:NSObject {
     }
     
     // MARK: - Method
-    @objc public func addAttribute(attributeName:NSAttributedString.Key, value:Any) {
+    public func addAttribute(attributeName:NSAttributedString.Key, value:Any) {
         self.mutableTextFontAttributes[attributeName] = value
     }
 
@@ -35,7 +35,7 @@ open class MaterialDesignSymbol:NSObject {
      - parameter size: サイズ
      - returns: UIImage
      */
-    @objc public func image(size:CGSize)->UIImage {
+    public func image(size:CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         
         let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)
