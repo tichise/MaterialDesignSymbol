@@ -17,23 +17,57 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 #### Examples Swift
 
-##### Image
+##### SwiftUI / Image
+
+```
+import SwiftUI
+import MaterialDesignSymbol
+
+@available(iOS 13.0.0, *)
+struct SampleView: View {
+        
+    var body: some View {
+        VStack {
+            Image(icon: .work48px, size: 50)
+            Image(icon: .album24px, size: 30, color: .green)
+        }
+    }
+}
+```
+
+##### UIKit / UIImage
 
 ```html
 import MaterialDesignSymbol
 
-let symbol:MaterialDesignSymbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
+let symbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
 symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor, value: UIColor.red)
-let iconImage:UIImage = symbol.image(size: CGSize(width:25, height:25))
+let iconImage = symbol.image(size: CGSize(width:25, height:25))
 ```
 
-##### Text
+or 
+
+```
+import MaterialDesignSymbol
+
+let iconImage = MaterialDesignSymbol(icon: .viewHeadline48px, size: 30).image()
+```
+
+##### UIKit / UILabel
 
 ```html
 import MaterialDesignSymbol
 
 titleLabel.font = MaterialDesignFont.fontOfSize(20)
 titleLabel.text = MaterialDesignIcon.list48px
+```
+
+or 
+
+```html
+import MaterialDesignSymbol
+
+titleLabel.set(icon: .clear48px, fontSize: 12)
 ```
 
 #### Examples ObjectiveC
