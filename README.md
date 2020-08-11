@@ -4,8 +4,7 @@ Icon font library for Swift. Currently supports GoogleMaterialDesignIcons. Objec
 
 #### Image
 
-<img src="https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/6377/_____.png" width="160px">
-
+![image](https://user-images.githubusercontent.com/43707/89850548-8edb5300-dbc5-11ea-8cab-2b3be7faf06f.png)
 
 #### Licence
 font used in this project
