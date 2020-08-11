@@ -13,7 +13,10 @@ import MaterialDesignSymbol
 struct SampleView: View {
         
     var body: some View {
-        Image(icon: .work48px, size: 50)
+        VStack {
+            Image(icon: .work48px, size: 50)
+            Image(icon: .album24px, size: 30, color: .green)
+        }
     }
 }
 
