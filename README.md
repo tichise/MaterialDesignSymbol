@@ -19,6 +19,8 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 ##### SwiftUI / Image
 
+If you use ver 2.4.0 or higher, it's available for the SwiftUI.
+
 ```
 import SwiftUI
 import MaterialDesignSymbol
@@ -71,6 +73,9 @@ titleLabel.set(icon: .clear48px, fontSize: 12)
 ```
 
 #### Examples ObjectiveC
+
+Support for Objective C has ended with version 2.3.2.
+If you want to call from Objective C, please use ver 2.3.2 or earlier.
 
 ##### Image
 ```html
