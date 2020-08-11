@@ -18,9 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // UIImage
-        let symbol = MaterialDesignSymbol(icon: .viewHeadline48px, size: 30)
-        let iconImage = symbol.image(size: CGSize(width: 30, height: 30))
-        self.sampleImageView.image = iconImage
+        self.sampleImageView.image = MaterialDesignSymbol(icon: .viewHeadline48px, size: 30).image()
 
         // String
         sampleLabel.font = MaterialDesignFont.fontOfSize(20)
