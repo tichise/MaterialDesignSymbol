@@ -29,8 +29,8 @@ struct SampleView: View {
         
     var body: some View {
         VStack {
-            Image(icon: .work48px, size: 50)
-            Image(icon: .album24px, size: 30, color: .green)
+            Image(materialDesignIcon: .work48px, size: 50)
+            Image(materialDesignIcon: .album24px, size: 30, color: .green)
         }
     }
 }
