@@ -14,8 +14,8 @@ struct SwiftUIViewFor14: View {
 
     var body: some View {
         VStack {
-            Image(materialDesignIcon: .album24px, size: 30, color: Color.red)
-            
+            Image(materialDesignIcon: .album48px, size: 30)
+            Image(materialDesignIcon: .album24px, size: 30, color: .green)
         }
     }
 }
