@@ -14,6 +14,6 @@ let package = Package(
         .target(name: "MaterialDesignSymbol", 
                 path: "Sources",
                 resources: [
-                    .process("Resources/material-design-icons.ttf")])
+                    .copy("Resources")])
     ]
 )
