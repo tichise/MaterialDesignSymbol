@@ -13,5 +13,5 @@ let package = Package(
     targets: [
         .target(name: "MaterialDesignSymbol", path: "Sources")
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v5_3]
 )
