@@ -15,6 +15,5 @@ let package = Package(
                 path: "Sources",
                 resources: [
                     .process("Resources/material-design-icons.ttf")])
-    ],
-    swiftLanguageVersions: [.v5_3]
+    ]
 )
