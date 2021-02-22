@@ -11,7 +11,10 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "MaterialDesignSymbol", path: "Sources")
+        .target(name: "MaterialDesignSymbol", 
+                path: "Sources",
+                resources: [
+                    .process("Resources/material-design-icons.ttf")])
     ],
     swiftLanguageVersions: [.v5_3]
 )
