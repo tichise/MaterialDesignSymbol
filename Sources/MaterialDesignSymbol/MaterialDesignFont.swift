@@ -11,6 +11,19 @@ import UIKit
  マテリアルデザインアイコンをUIFont形式で呼ぶに使うクラス
  */
 public struct MaterialDesignFont {
+    
+    private static func registerFont(name: String, fileExtension: String) {
+        #if SWIFT_PACKAGE
+        guard let fontURL = Bundle.module.url(forResource: name, withExtension: fileExtension) else {
+            print("No font named \(name).\(fileExtension) was found in the module bundle")
+            return
+        }
+
+        var error: Unmanaged<CFError>?
+        CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
+        print(error ?? "Successfully registered font: \(name)")
+        #endif
+    }
 
     /**
      アイコンをフォント形式で呼び出すのに使うメソッド
@@ -20,6 +33,8 @@ public struct MaterialDesignFont {
     public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         /// 呼び出すアイコンファイル名
         let name = "material-design-icons"
+        
+        registerFont(name: name, fileExtension: "ttf")
 
         // アイコンを呼び出す
         if UIFont.fontNames(forFamilyName: name).count == 0 {

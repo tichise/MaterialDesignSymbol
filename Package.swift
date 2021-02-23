@@ -11,10 +11,9 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "MaterialDesignSymbol", 
-                path: "Sources",
+        .target(name: "MaterialDesignSymbol",
                 resources: [
-                    .copy("Resources")])
+                    .process("Resources")])
     ],
     swiftLanguageVersions: [.v5]
 )
