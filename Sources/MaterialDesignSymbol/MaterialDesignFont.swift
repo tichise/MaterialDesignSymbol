@@ -13,6 +13,7 @@ import UIKit
 public struct MaterialDesignFont {
     
     private static func registerFont(name: String, fileExtension: String) {
+        #if SWIFT_PACKAGE
         guard let fontURL = Bundle.module.url(forResource: name, withExtension: fileExtension) else {
             print("No font named \(name).\(fileExtension) was found in the module bundle")
             return
@@ -21,6 +22,7 @@ public struct MaterialDesignFont {
         var error: Unmanaged<CFError>?
         CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
         print(error ?? "Successfully registered font: \(name)")
+        #endif
     }
 
     /**

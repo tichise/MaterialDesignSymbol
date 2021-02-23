@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MaterialDesignSymbol'
-  s.version = '2.6.7'
+  s.version = '2.6.8'
   s.license = {
     :type => "MIT",
     :text => <<-LICENSE
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
   s.swift_versions = '5.0'
-  s.source_files = 'Sources/*.swift'
+  s.source_files = 'Sources/MaterialDesignSymbol/*.swift'
   s.requires_arc = true
-  s.resources = 'Resources/*.ttf'
+  s.resources = 'Sources/MaterialDesignSymbol/Resources/*.ttf'
 end
