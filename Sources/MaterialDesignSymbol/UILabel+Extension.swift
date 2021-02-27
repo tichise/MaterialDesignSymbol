@@ -10,7 +10,7 @@ import UIKit
 extension UILabel {
     
     public func set(icon: MaterialDesignIconEnum, fontSize: CGFloat) {
-        self.font = MaterialDesignFont.fontOfSize(fontSize)
+        self.font = MaterialDesignFont.shared.fontOfSize(fontSize)
         self.text = icon.rawValue
     }
 }

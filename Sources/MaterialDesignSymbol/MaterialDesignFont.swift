@@ -12,7 +12,22 @@ import UIKit
  */
 public struct MaterialDesignFont {
     
-    private static func registerFont(name: String, fileExtension: String) {
+    static let shared = MaterialDesignFont()
+    
+    /// 呼び出すアイコンファイル名
+    private let name = "material-design-icons"
+
+    private init() {
+        loadFont()
+    }
+    
+    /// このメソッドはSPMの場合だけ使います。
+    public func loadFont() {
+        /// 呼び出すアイコンファイル名
+        registerFont(name: name, fileExtension: "ttf")
+    }
+    
+    private func registerFont(name: String, fileExtension: String) {
         #if SWIFT_PACKAGE
         guard let fontURL = Bundle.module.url(forResource: name, withExtension: fileExtension) else {
             print("No font named \(name).\(fileExtension) was found in the module bundle")
@@ -30,12 +45,8 @@ public struct MaterialDesignFont {
      - parameter fontSize: フォントサイズ
      - returns: UIFont
      */
-    public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
-        /// 呼び出すアイコンファイル名
-        let name = "material-design-icons"
+    public func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         
-        registerFont(name: name, fileExtension: "ttf")
-
         // アイコンを呼び出す
         if UIFont.fontNames(forFamilyName: name).count == 0 {
             do {
