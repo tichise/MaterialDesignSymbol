@@ -27,7 +27,7 @@ public class MaterialDesignSymbol {
             self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         }
 
-        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.fontOfSize(size)
+        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.shared.fontOfSize(size)
     }
 
     public init(text: String, size: CGFloat) {
@@ -40,7 +40,7 @@ public class MaterialDesignSymbol {
             self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         }
 
-        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.fontOfSize(size)
+        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.shared.fontOfSize(size)
     }
 
     // MARK: - Method
