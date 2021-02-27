@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MaterialDesignSymbol",
+        "repositoryURL": "/Users/takuya/Documents/github/MaterialDesignSymbol",
+        "state": {
+          "branch": null,
+          "revision": "934ba13b9ba58a406dc44188468be87096ff98f1",
+          "version": "2.6.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
