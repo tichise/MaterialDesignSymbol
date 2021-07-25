@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 @available(iOS 13.0, *)
+@available(watchOS 6.0, *)
 extension Image {
     public init(materialDesignIcon: MaterialDesignIconEnum, size: CGFloat, uiColor: UIColor) {
         let symbol = MaterialDesignSymbol(icon: materialDesignIcon, size: size)
@@ -28,6 +29,7 @@ extension Image {
 }
 
 @available(iOS 14.0, *)
+@available(watchOS 7.0, *)
 extension Image {
     public init(materialDesignIcon: MaterialDesignIconEnum, size: CGFloat, color: Color) {
         let symbol = MaterialDesignSymbol(icon: materialDesignIcon, size: size)
