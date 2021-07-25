@@ -74,14 +74,6 @@ titleLabel.font = MaterialDesignFont.fontOfSize(20)
 titleLabel.text = MaterialDesignIcon.list48px
 ```
 
-or 
-
-```html
-import MaterialDesignSymbol
-
-titleLabel.set(icon: .clear48px, fontSize: 12)
-```
-
 #### Examples ObjectiveC
 
 Support for Objective C has ended with version 2.3.2.
