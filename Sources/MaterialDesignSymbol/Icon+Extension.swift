@@ -5,7 +5,6 @@
 //  Created by tichise on 2020年8月10日 20/08/10.
 //
 
-import UIKit
 import SwiftUI
 
 @available(iOS 13.0, watchOS 6.0, *)
