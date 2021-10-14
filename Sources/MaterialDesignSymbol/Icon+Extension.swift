@@ -7,26 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 13.0, watchOS 6.0, *)
-extension Image {
-    public init(materialDesignIcon: MaterialDesignIconEnum, size: CGFloat, uiColor: UIColor) {
-        let symbol = MaterialDesignSymbol(icon: materialDesignIcon, size: size)
-        symbol.addAttribute(foregroundColor: uiColor)
-        let iconImage = symbol.image(size: CGSize(width: size, height: size))
-        
-        self.init(uiImage: iconImage)
-    }
-    
-    public init(materialDesignIcon: MaterialDesignIconEnum, size: CGFloat) {
-        let symbol = MaterialDesignSymbol(icon: materialDesignIcon, size: size)
-        symbol.addAttribute(foregroundColor: UIColor.black)
-        let iconImage = symbol.image(size: CGSize(width: size, height: size))
-        
-        self.init(uiImage: iconImage)
-    }
-}
-
-@available(iOS 14.0, watchOS 7.0, *)
 extension Image {
     public init(materialDesignIcon: MaterialDesignIconEnum, size: CGFloat, color: Color) {
         let symbol = MaterialDesignSymbol(icon: materialDesignIcon, size: size)
