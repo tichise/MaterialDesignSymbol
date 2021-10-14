@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, watchOS 7.0, *)
 extension Image {
     public init(materialDesignIcon: MaterialDesignIconEnum, size: CGFloat, color: Color) {
         let symbol = MaterialDesignSymbol(icon: materialDesignIcon, size: size)
