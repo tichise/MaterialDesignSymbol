@@ -12,6 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Text("test")
             Image(materialDesignIcon: .album48px, size: 30)
             Image(materialDesignIcon: .album24px, size: 30, color: .green)
         }
