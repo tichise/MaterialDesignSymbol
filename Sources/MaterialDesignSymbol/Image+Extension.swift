@@ -1,5 +1,5 @@
 //
-//  Icon+Extension..swift
+//  Image+Extension..swift
 //  MaterialDesignSymbol
 //
 //  Created by tichise on 2020年8月10日 20/08/10.
