@@ -16,37 +16,6 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 #### Examples Swift
 
-##### SwiftUI / Image
-
-If you use ver 2.4.0 or higher, it's available for the SwiftUI.
-
-```
-import SwiftUI
-import MaterialDesignSymbol
-
-@available(iOS 13.0.0, *)
-struct SampleView: View {
-        
-    var body: some View {
-        VStack {
-            Image(materialDesignIcon: .work48px, size: 50)
-            Image(materialDesignIcon: .album24px, size: 30, color: .green)
-        }
-    }
-}
-
-@available(iOS 14.0.0, *)
-struct SampleView: View {
-        
-    var body: some View {
-        VStack {
-            Image(materialDesignIcon: .work48px, size: 50)
-            Image(materialDesignIcon: .album24px, size: 30, color: Color.green)
-        }
-    }
-}
-```
-
 ##### UIKit / UIImage
 
 ```html
