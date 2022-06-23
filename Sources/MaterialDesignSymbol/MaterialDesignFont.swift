@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -67,3 +68,4 @@ public struct MaterialDesignFont {
         return UIFont(name: name, size: fontSize)!
     }
 }
+#endif
