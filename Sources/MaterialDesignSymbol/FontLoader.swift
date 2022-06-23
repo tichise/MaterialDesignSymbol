@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -50,3 +51,4 @@ public enum FontError: Error {
   case initFontError
   case registerFailed
 }
+#endif

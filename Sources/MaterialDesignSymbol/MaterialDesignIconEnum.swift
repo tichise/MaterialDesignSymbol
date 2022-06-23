@@ -2,6 +2,7 @@
 //  MaterialDesignIconEnum
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -1674,3 +1675,4 @@ public enum MaterialDesignIconEnum: String {
     case whatshot24px = "\u{ec7b}"
     case whatshot48px = "\u{ec7c}"
 }
+#endif

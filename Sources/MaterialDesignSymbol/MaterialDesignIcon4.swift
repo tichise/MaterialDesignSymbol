@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -411,3 +412,4 @@ extension MaterialDesignIcon {
     public static let vibration24px = "\u{ec3a}"
     public static let vibration48px = "\u{ec3b}"
 }
+#endif

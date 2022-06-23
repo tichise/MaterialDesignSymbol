@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -90,3 +91,4 @@ public class MaterialDesignSymbol {
         return image!
     }
 }
+#endif

@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -411,3 +412,4 @@ extension MaterialDesignIcon {
     public static let borderClear24px = "\u{e91c}"
     public static let borderClear48px = "\u{e91d}"
 }
+#endif

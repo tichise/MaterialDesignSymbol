@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -411,3 +412,4 @@ extension MaterialDesignIcon {
     public static let flashOn48px = "\u{eaab}"
     public static let flip24px = "\u{eaac}"
 }
+#endif
