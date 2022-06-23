@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -411,3 +412,4 @@ extension MaterialDesignIcon {
     public static let repeat24px = "\u{e78d}"
     public static let repeat48px = "\u{e78e}"
 }
+#endif
