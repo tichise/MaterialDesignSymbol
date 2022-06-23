@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 /**
@@ -13,3 +14,4 @@ import UIKit
 @available(iOS, deprecated: 13.0)
 public struct MaterialDesignIcon {
 }
+#endif
