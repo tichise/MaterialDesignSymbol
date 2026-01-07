@@ -5,12 +5,11 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * マテリアルデザインアイコンのコードを返すクラス
- */
+/// Legacy Material Design icon constants (Part 5)
+/// - Note: Use `MaterialDesignIconEnum` instead for modern Swift code
 extension MaterialDesignIcon {
     public static let voiceChat24px = "\u{ec3c}"
     public static let voiceChat48px = "\u{ec3d}"

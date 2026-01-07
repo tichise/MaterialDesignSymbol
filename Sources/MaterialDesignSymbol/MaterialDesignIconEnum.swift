@@ -2,13 +2,11 @@
 //  MaterialDesignIconEnum
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * マテリアルデザインアイコンのコードを返すenum
- */
-public enum MaterialDesignIconEnum: String {
+/// Material Design icon enum with Unicode character mappings
+public enum MaterialDesignIconEnum: String, Sendable, CaseIterable {
     case threeDRotation24px = "\u{e600}"
     case threeDRotation48px = "\u{e601}"
     case accessibility24px = "\u{e602}"

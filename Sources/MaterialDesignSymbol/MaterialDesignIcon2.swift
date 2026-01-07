@@ -5,12 +5,11 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * マテリアルデザインアイコンのコードを返すクラス
- */
+/// Legacy Material Design icon constants (Part 2)
+/// - Note: Use `MaterialDesignIconEnum` instead for modern Swift code
 extension MaterialDesignIcon {
     public static let repeatOne24px = "\u{e78f}"
     public static let repeatOne48px = "\u{e790}"

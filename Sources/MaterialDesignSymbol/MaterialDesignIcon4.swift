@@ -5,12 +5,11 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * マテリアルデザインアイコンのコードを返すクラス
- */
+/// Legacy Material Design icon constants (Part 4)
+/// - Note: Use `MaterialDesignIconEnum` instead for modern Swift code
 extension MaterialDesignIcon {
     public static let flip48px = "\u{eaad}"
     public static let gradient24px = "\u{eaae}"

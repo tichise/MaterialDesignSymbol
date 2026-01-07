@@ -5,90 +5,82 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * MaterialDesignSymbolのメインクラス
- */
-public class MaterialDesignSymbol {
+/// Main class for rendering Material Design icons as images
+@MainActor
+public final class MaterialDesignSymbol: Sendable {
 
-    var text = ""
-    var fontOfSize: CGFloat = 30
+    private let text: String
+    private let fontSize: CGFloat
+    private var attributes: [NSAttributedString.Key: Any]
 
-    var mutableTextFontAttributes = [NSAttributedString.Key: Any]()
-    
+    /// Initialize with a Material Design icon enum value
+    /// - Parameters:
+    ///   - icon: The icon to display
+    ///   - size: The font size for the icon
     public init(icon: MaterialDesignIconEnum, size: CGFloat) {
         self.text = icon.rawValue
-        self.fontOfSize = size
-
-        self.mutableTextFontAttributes = [NSAttributedString.Key: Any]()
-        
-        if let paragraphStyle = NSMutableParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle {
-            self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
-        }
-
-        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.shared.fontOfSize(size)
+        self.fontSize = size
+        self.attributes = Self.createDefaultAttributes(size: size)
     }
 
+    /// Initialize with a raw text string (Unicode character)
+    /// - Parameters:
+    ///   - text: The Unicode character for the icon
+    ///   - size: The font size for the icon
     public init(text: String, size: CGFloat) {
         self.text = text
-        self.fontOfSize = size
+        self.fontSize = size
+        self.attributes = Self.createDefaultAttributes(size: size)
+    }
 
-        self.mutableTextFontAttributes = [NSAttributedString.Key: Any]()
-        
+    private static func createDefaultAttributes(size: CGFloat) -> [NSAttributedString.Key: Any] {
+        var attrs: [NSAttributedString.Key: Any] = [:]
+
         if let paragraphStyle = NSMutableParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle {
-            self.mutableTextFontAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+            attrs[.paragraphStyle] = paragraphStyle
         }
 
-        self.mutableTextFontAttributes[NSAttributedString.Key.font] = MaterialDesignFont.shared.fontOfSize(size)
+        attrs[.font] = MaterialDesignFont.shared.fontOfSize(size)
+        return attrs
     }
 
-    // MARK: - Method
+    // MARK: - Attribute Methods
+
+    /// Add a custom attribute to the icon
+    /// - Parameters:
+    ///   - attributeName: The attribute key
+    ///   - value: The attribute value
     public func addAttribute(attributeName: NSAttributedString.Key, value: Any) {
-        self.mutableTextFontAttributes[attributeName] = value
+        attributes[attributeName] = value
     }
-    
+
+    /// Set the foreground color of the icon
+    /// - Parameter foregroundColor: The color to apply
     public func addAttribute(foregroundColor: UIColor) {
-        addAttribute(attributeName: NSAttributedString.Key.foregroundColor, value: foregroundColor)
+        addAttribute(attributeName: .foregroundColor, value: foregroundColor)
     }
 
-    /**
-     // アイコンを画像形式で取得するのに使うメソッド
-     - parameter size: サイズ
-     - returns: UIImage
-     */
+    // MARK: - Image Generation
+
+    /// Generate an image from the icon with the specified size
+    /// - Parameter size: The size of the output image
+    /// - Returns: The rendered UIImage
     public func image(size: CGSize) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-
-        let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        self.text.draw(in: textRect, withAttributes: self.mutableTextFontAttributes)
-
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-
-        UIGraphicsEndImageContext()
-
-        return image!
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { _ in
+            let textRect = CGRect(origin: .zero, size: size)
+            text.draw(in: textRect, withAttributes: attributes)
+        }
     }
-    
-    /**
-     // アイコンを画像形式で取得するのに使うメソッド
-     - parameter size: サイズ
-     - returns: UIImage
-     */
+
+    /// Generate a square image from the icon using the font size as dimensions
+    /// - Returns: The rendered UIImage
     public func image() -> UIImage {
-        let size = CGSize(width: fontOfSize, height: fontOfSize)
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-
-        let textRect  = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        self.text.draw(in: textRect, withAttributes: self.mutableTextFontAttributes)
-
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-
-        UIGraphicsEndImageContext()
-
-        return image!
+        let size = CGSize(width: fontSize, height: fontSize)
+        return image(size: size)
     }
 }
 #endif

@@ -5,12 +5,11 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * マテリアルデザインアイコンのコードを返すクラス
- */
+/// Legacy Material Design icon constants (Part 1)
+/// - Note: Use `MaterialDesignIconEnum` instead for modern Swift code
 extension MaterialDesignIcon {
     public static let threeDRotation24px = "\u{e600}"
     public static let threeDRotation48px = "\u{e601}"

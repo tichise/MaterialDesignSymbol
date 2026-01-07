@@ -5,67 +5,70 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
+import CoreText
 
-/**
- マテリアルデザインアイコンをUIFont形式で呼ぶに使うクラス
- */
-public struct MaterialDesignFont {
-    
-    static let shared = MaterialDesignFont()
-    
-    /// 呼び出すアイコンファイル名
-    private let name = "material-design-icons"
+/// Provides access to Material Design icon font
+public struct MaterialDesignFont: Sendable {
+
+    /// Shared instance
+    public static let shared = MaterialDesignFont()
+
+    /// Font family name
+    private static let fontName = "material-design-icons"
 
     private init() {
-        loadFont()
+        Self.registerFontIfNeeded()
     }
-    
-    /// このメソッドはSPMの場合だけ使います。
-    public func loadFont() {
-        /// 呼び出すアイコンファイル名
-        registerFont(name: name, fileExtension: "ttf")
-    }
-    
-    private func registerFont(name: String, fileExtension: String) {
+
+    /// Register the font from the bundle (for SPM)
+    private static func registerFontIfNeeded() {
         #if SWIFT_PACKAGE
-        guard let fontURL = Bundle.module.url(forResource: name, withExtension: fileExtension) else {
-            print("No font named \(name).\(fileExtension) was found in the module bundle")
+        guard let fontURL = Bundle.module.url(forResource: fontName, withExtension: "ttf") else {
+            assertionFailure("Font file '\(fontName).ttf' not found in bundle")
             return
         }
 
         var error: Unmanaged<CFError>?
-        CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
-        print(error ?? "Successfully registered font: \(name)")
+        let success = CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
+
+        if !success, let cfError = error?.takeRetainedValue() {
+            let nsError = cfError as Error
+            // Ignore "already registered" errors
+            if (nsError as NSError).code != CTFontManagerError.alreadyRegistered.rawValue {
+                assertionFailure("Failed to register font: \(nsError.localizedDescription)")
+            }
+        }
         #endif
     }
 
-    /**
-     アイコンをフォント形式で呼び出すのに使うメソッド
-     - parameter fontSize: フォントサイズ
-     - returns: UIFont
-     */
+    /// Get the Material Design icon font at the specified size
+    /// - Parameter fontSize: The desired font size
+    /// - Returns: The UIFont instance
     public func fontOfSize(_ fontSize: CGFloat) -> UIFont {
-        
-        // アイコンを呼び出す
-        if UIFont.fontNames(forFamilyName: name).count == 0 {
+        // Check if font is already available
+        if UIFont.fontNames(forFamilyName: Self.fontName).isEmpty {
             do {
-                try FontLoader.loadFont(name)
-            } catch FontError.invalidFontFile {
-                print("invalidFontFile")
-            } catch FontError.fontPathNotFound {
-                print("fontPathNotFound")
-            } catch FontError.initFontError {
-                print("initFontError")
-            } catch FontError.registerFailed {
-                print("registerFailed")
+                try FontLoader.loadFont(Self.fontName)
             } catch {
-                
+                assertionFailure("Failed to load font: \(error)")
             }
         }
 
-        return UIFont(name: name, size: fontSize)!
+        guard let font = UIFont(name: Self.fontName, size: fontSize) else {
+            assertionFailure("Could not create font '\(Self.fontName)' at size \(fontSize)")
+            return UIFont.systemFont(ofSize: fontSize)
+        }
+
+        return font
+    }
+
+    /// Static method to get the font at the specified size
+    /// - Parameter fontSize: The desired font size
+    /// - Returns: The UIFont instance
+    public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
+        shared.fontOfSize(fontSize)
     }
 }
 #endif

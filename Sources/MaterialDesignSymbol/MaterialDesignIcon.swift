@@ -5,13 +5,11 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
 import UIKit
 
-/**
- * マテリアルデザインアイコンのコードを返す構造体
- */
-@available(iOS, deprecated: 13.0)
-public struct MaterialDesignIcon {
-}
+/// Legacy struct for Material Design icon constants
+/// - Note: Use `MaterialDesignIconEnum` instead for modern Swift code
+@available(iOS, deprecated: 14.0, message: "Use MaterialDesignIconEnum instead")
+public struct MaterialDesignIcon: Sendable {}
 #endif
