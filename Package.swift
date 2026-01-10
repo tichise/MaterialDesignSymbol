@@ -14,6 +14,10 @@ let package = Package(
         .target(
             name: "MaterialDesignSymbol",
             resources: [.process("Resources")]
+        ),
+        .testTarget(
+            name: "MaterialDesignSymbolTests",
+            dependencies: ["MaterialDesignSymbol"]
         )
     ],
     swiftLanguageVersions: [.v5]
