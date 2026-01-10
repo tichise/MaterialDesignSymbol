@@ -1,72 +1,79 @@
-#### MaterialDesignSymbol
+# MaterialDesignSymbol
 
-Icon font library for Swift. Currently supports GoogleMaterialDesignIcons. ObjectiveC version is [here](https://github.com/tichise/MaterialDesignSymbolObjC).
+Icon font library for Swift. Currently supports Google Material Design Icons.
 
-#### Image
+## Requirements
 
-![image](https://user-images.githubusercontent.com/43707/89850548-8edb5300-dbc5-11ea-8cab-2b3be7faf06f.png)
+- iOS 16.0+
+- watchOS 9.0+
+- Swift 5.0+
 
-#### Licence
-font used in this project
+## Installation
 
-Author of the font used in this  project: Google
+### Swift Package Manager
+
+Add via Xcode: File > Add Package Dependencies...
+
+```
+https://github.com/tichise/MaterialDesignSymbol.git
+```
+
+## Usage
+
+### UIImage
+
+```swift
+import MaterialDesignSymbol
+
+let symbol = MaterialDesignSymbol(icon: .home48px, size: 30)
+let iconImage = symbol.image()
+```
+
+With color:
+
+```swift
+let symbol = MaterialDesignSymbol(icon: .home48px, size: 30)
+symbol.addAttribute(foregroundColor: .red)
+let iconImage = symbol.image()
+```
+
+With custom size:
+
+```swift
+let symbol = MaterialDesignSymbol(icon: .home48px, size: 25)
+let iconImage = symbol.image(size: CGSize(width: 50, height: 50))
+```
+
+### UILabel
+
+```swift
+import MaterialDesignSymbol
+
+titleLabel.font = MaterialDesignFont.shared.fontOfSize(20)
+titleLabel.text = MaterialDesignIconEnum.home48px.rawValue
+```
+
+### SwiftUI
+
+```swift
+import SwiftUI
+import MaterialDesignSymbol
+
+struct ContentView: View {
+    var body: some View {
+        Image(uiImage: MaterialDesignSymbol(icon: .home48px, size: 30).image())
+    }
+}
+```
+
+## License
+
+### Font License
+
+Author: Google
 Link: https://github.com/google/material-design-icons
+License: Apache License 2.0
 
-Creative Commons Attribution 4.0 International (CC BY 4.0)
+### Library License
 
-#### Examples Swift
-
-##### UIKit / UIImage
-
-```html
-import MaterialDesignSymbol
-
-let symbol = MaterialDesignSymbol(text:MaterialDesignIcon.list48px, size:25)
-symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor, value: UIColor.red)
-let iconImage = symbol.image(size: CGSize(width:25, height:25))
-```
-
-or 
-
-```
-import MaterialDesignSymbol
-
-let iconImage = MaterialDesignSymbol(icon: .viewHeadline48px, size: 30).image()
-```
-
-##### UIKit / UILabel
-
-```html
-import MaterialDesignSymbol
-
-titleLabel.font = MaterialDesignFont.fontOfSize(20)
-titleLabel.text = MaterialDesignIcon.list48px
-```
-
-#### Examples ObjectiveC
-
-Support for Objective C has ended with version 2.3.2.
-If you want to call from Objective C, please use ver 2.3.2 or earlier.
-
-##### Image
-```html
-@import MaterialDesignSymbol;
-
-    
-MaterialDesignSymbol *symbol = [[MaterialDesignSymbol alloc] initWithText:[MaterialDesignIcon home48px] size:30];
-[symbol addAttributeWithAttributeName:NSForegroundColorAttributeName value:[UIColor blackColor]];
-sampleImageView.image = [symbol imageWithSize:CGSizeMake(30, 30)];
-```
-
-##### Text
-
-```html
-@import MaterialDesignSymbol;
-
-sampleLabel.font = [MaterialDesignFont fontOfSize:20];
-sampleLabel.text = [MaterialDesignIcon clear48px];
-```
-
-
-#### Installation (CocoaPods)
-`pod MaterialDesignSymbol`
+MIT License
