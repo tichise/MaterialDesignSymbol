@@ -16,7 +16,8 @@ public struct MaterialDesignFont {
     static let shared = MaterialDesignFont()
     
     /// 呼び出すアイコンファイル名
-    private let name = "material-design-icons"
+    private let name = "Material Symbols Outlined"
+    private let fileName = "MaterialSymbolsOutlined"
 
     private init() {
         loadFont()
@@ -25,7 +26,7 @@ public struct MaterialDesignFont {
     /// このメソッドはSPMの場合だけ使います。
     public func loadFont() {
         /// 呼び出すアイコンファイル名
-        registerFont(name: name, fileExtension: "ttf")
+        registerFont(name: fileName, fileExtension: "ttf")
     }
     
     private func registerFont(name: String, fileExtension: String) {
@@ -47,11 +48,11 @@ public struct MaterialDesignFont {
      - returns: UIFont
      */
     public func fontOfSize(_ fontSize: CGFloat) -> UIFont {
-        
+
         // アイコンを呼び出す
         if UIFont.fontNames(forFamilyName: name).count == 0 {
             do {
-                try FontLoader.loadFont(name)
+                try FontLoader.loadFont(fileName)
             } catch FontError.invalidFontFile {
                 print("invalidFontFile")
             } catch FontError.fontPathNotFound {
@@ -61,7 +62,7 @@ public struct MaterialDesignFont {
             } catch FontError.registerFailed {
                 print("registerFailed")
             } catch {
-                
+
             }
         }
 
