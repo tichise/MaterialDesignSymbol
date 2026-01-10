@@ -192,8 +192,8 @@ final class MaterialDesignSymbolTests: XCTestCase {
     // MARK: - MaterialSymbolEnum Tests (New)
 
     func testMaterialSymbolEnumCount() {
-        // Verify we have 4,102 icons
-        XCTAssertEqual(MaterialSymbolEnum.allCases.count, 4102)
+        // Verify we have 3,802 unique icons (plus 300 aliases)
+        XCTAssertEqual(MaterialSymbolEnum.allCases.count, 3802)
     }
 
     func testMaterialSymbolEnumHasRawValue() {

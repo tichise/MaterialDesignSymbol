@@ -55,7 +55,7 @@ struct MaterialSymbolListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Material Symbols Outlined - 4,102 icons")
+                Text("Material Symbols Outlined - 3,802 unique icons")
                     .font(.caption)
                     .foregroundColor(.secondary)
 
@@ -106,7 +106,6 @@ struct LegacyIconListView: View {
             ("camera", .camera24px),
             ("photo", .photo24px),
             ("album", .album24px),
-            ("music", .musicNote24px),
             ("video", .videocam24px),
             ("play", .playArrow24px),
             ("pause", .pause24px),
@@ -115,9 +114,8 @@ struct LegacyIconListView: View {
             ("replay", .replay24px),
             ("volume", .volumeUp24px),
             ("mute", .volumeOff24px),
-            ("brightness", .brightnessHigh24px),
             ("bluetooth", .bluetooth24px),
-            ("wifi", .wifi24px),
+            ("wifi", .networkWifi18px),
             ("gps", .gpsFixed24px),
             ("lock", .lock24px),
             ("unlock", .lockOpen24px),
@@ -143,10 +141,10 @@ struct LegacyIconListView: View {
             ("directions", .directions24px),
             ("car", .directionsCar24px),
             ("bus", .directionsBus24px),
-            ("train", .train24px),
+            ("train", .directionsTrain24px),
             ("flight", .flight24px),
             ("hotel", .hotel24px),
-            ("restaurant", .restaurant24px),
+            ("restaurant", .localRestaurant24px),
             ("shopping", .shoppingCart24px),
             ("payment", .payment24px),
         ]
