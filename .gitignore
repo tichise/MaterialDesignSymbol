@@ -1,6 +1,11 @@
 # Mac OS X
 .DS_Store
 
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
 # Xcode
 build/
 *.pbxuser
