@@ -1,13 +1,12 @@
 //
-//  MaterialDesignIconEnum
+//  MaterialDesignIconEnum.swift
+//  MaterialDesignSymbol
 //
 
-#if !os(macOS)
-import UIKit
+import Foundation
 
-/**
- * マテリアルデザインアイコンのコードを返すenum
- */
+/// Material Design icon codes as enum cases
+/// Each case contains the Unicode character for the icon
 public enum MaterialDesignIconEnum: String {
     case threeDRotation24px = "\u{e600}"
     case threeDRotation48px = "\u{e601}"
@@ -1675,4 +1674,3 @@ public enum MaterialDesignIconEnum: String {
     case whatshot24px = "\u{ec7b}"
     case whatshot48px = "\u{ec7c}"
 }
-#endif

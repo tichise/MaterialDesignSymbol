@@ -1,19 +1,27 @@
-// swift-tools-version:5.4
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
     name: "MaterialDesignSymbol",
-    platforms: [.iOS(.v10),
-                .watchOS(.v3)],
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v11),
+        .watchOS(.v6),
+        .tvOS(.v13),
+        .visionOS(.v1)
+    ],
     products: [
         .library(name: "MaterialDesignSymbol", targets: ["MaterialDesignSymbol"])
     ],
-    dependencies: [],
     targets: [
-        .target(name: "MaterialDesignSymbol",
-                resources: [
-                    .process("Resources")])
+        .target(
+            name: "MaterialDesignSymbol",
+            resources: [.process("Resources")]
+        ),
+        .testTarget(
+            name: "MaterialDesignSymbolTests",
+            dependencies: ["MaterialDesignSymbol"]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

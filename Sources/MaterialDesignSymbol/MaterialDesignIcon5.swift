@@ -5,8 +5,8 @@
 //  Copyright (c) 2015 tichise. All rights reserved.
 //
 
-#if !os(macOS)
-import UIKit
+import Foundation
+
 
 /**
  * マテリアルデザインアイコンのコードを返すクラス
@@ -78,4 +78,3 @@ extension MaterialDesignIcon {
     public static let whatshot24px = "\u{ec7b}"
     public static let whatshot48px = "\u{ec7c}"
 }
-#endif
