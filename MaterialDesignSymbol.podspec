@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MaterialDesignSymbol'
-  s.version = '2.8.3'
+  s.version = '2.9.0'
   s.license = {
     :type => "MIT",
     :text => <<-LICENSE
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.author = "Takuya Ichise"
   s.source = { :git => 'https://github.com/tichise/MaterialDesignSymbol.git', :tag => s.version }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '16.0'
   s.swift_versions = '5.0'
   s.source_files = 'Sources/MaterialDesignSymbol/*.swift'
   s.requires_arc = true
