@@ -1,6 +1,9 @@
 import XCTest
 @testable import MaterialDesignSymbol
 
+#if !os(macOS)
+import UIKit
+
 final class MaterialDesignSymbolTests: XCTestCase {
 
     // MARK: - MaterialDesignFont Tests
@@ -14,7 +17,7 @@ final class MaterialDesignSymbolTests: XCTestCase {
     func testFontLoading() {
         let font = MaterialDesignFont.shared.fontOfSize(24)
         XCTAssertNotNil(font, "Font should load successfully")
-        XCTAssertEqual(font.fontName, "material-design-icons")
+        XCTAssertEqual(font.fontName, "Material Symbols Outlined")
     }
 
     func testFontSize() {
@@ -145,7 +148,7 @@ final class MaterialDesignSymbolTests: XCTestCase {
         XCTAssertNotNil(image)
     }
 
-    // MARK: - MaterialDesignIconEnum Tests
+    // MARK: - MaterialDesignIconEnum Tests (Legacy)
 
     func testIconEnumHasRawValue() {
         let icon = MaterialDesignIconEnum.home48px
@@ -186,18 +189,52 @@ final class MaterialDesignSymbolTests: XCTestCase {
         }
     }
 
-    // MARK: - MaterialDesignIcon (Deprecated) Tests
+    // MARK: - MaterialSymbolEnum Tests (New)
 
-    func testDeprecatedMaterialDesignIconExists() {
-        // Verify the deprecated struct exists for backward compatibility
-        let _ = MaterialDesignIcon.self
+    func testMaterialSymbolEnumCount() {
+        // Verify we have 4,102 icons
+        XCTAssertEqual(MaterialSymbolEnum.allCases.count, 4102)
     }
 
-    func testDeprecatedIconStaticProperties() {
-        // Test that static properties still work
-        let iconText = MaterialDesignIcon.home48px
-        XCTAssertFalse(iconText.isEmpty)
-        XCTAssertEqual(iconText.count, 1)
+    func testMaterialSymbolEnumHasRawValue() {
+        let icon = MaterialSymbolEnum.home
+        XCTAssertFalse(icon.rawValue.isEmpty)
+    }
+
+    func testMaterialSymbolEnumRawValueIsUnicode() {
+        let icon = MaterialSymbolEnum.home
+        XCTAssertEqual(icon.rawValue.count, 1)
+    }
+
+    func testMaterialSymbolEnumMultipleIcons() {
+        let icons: [MaterialSymbolEnum] = [
+            .home,
+            .settings,
+            .search,
+            .menu,
+            .add,
+            .delete
+        ]
+
+        for icon in icons {
+            let symbol = MaterialDesignSymbol(text: icon.rawValue, size: 24)
+            let image = symbol.image()
+            XCTAssertTrue(image.size.width > 0, "Image for \(icon) should be generated")
+        }
+    }
+
+    func testMaterialSymbolEnumWithNumberPrefix() {
+        // Test icons that start with numbers (prefixed with 'icon')
+        let icons: [MaterialSymbolEnum] = [
+            .icon10k,
+            .icon123,
+            .icon1k,
+            .icon360
+        ]
+
+        for icon in icons {
+            XCTAssertFalse(icon.rawValue.isEmpty)
+        }
     }
 
     // MARK: - Edge Cases
@@ -228,3 +265,4 @@ final class MaterialDesignSymbolTests: XCTestCase {
         XCTAssertEqual(image.size.height, 50)
     }
 }
+#endif
