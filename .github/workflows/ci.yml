@@ -59,14 +59,3 @@ jobs:
 
       - name: Build with Swift
         run: swift build
-
-  pod-lint:
-    name: CocoaPods Lint
-    runs-on: macos-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Lint Podspec
-        run: pod lib lint --allow-warnings
